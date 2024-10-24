@@ -9,18 +9,26 @@
 /* Begin PBXBuildFile section */
 		851443AA2CB9F7920066F955 /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 851443A92CB9F7920066F955 /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		851443B22CB9F8590066F955 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851443B12CB9F8590066F955 /* NetworkManager.swift */; };
-		851443C02CBAE3160066F955 /* NetworkHTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851443BF2CBAE3160066F955 /* NetworkHTTPMethod.swift */; };
+		851443C02CBAE3160066F955 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851443BF2CBAE3160066F955 /* HTTPMethod.swift */; };
 		851443C22CC185100066F955 /* HTTPRequesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851443C12CC185100066F955 /* HTTPRequesting.swift */; };
-		851443C42CC1854F0066F955 /* NetworkTaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851443C32CC1854F0066F955 /* NetworkTaskType.swift */; };
+		D519F61B2CC5AB5800A80555 /* Encodable+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D519F61A2CC5AB4700A80555 /* Encodable+extension.swift */; };
+		D519F61D2CC5AB7100A80555 /* URLRequest+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D519F61C2CC5AB7100A80555 /* URLRequest+extension.swift */; };
+		D519F61F2CC5AC0F00A80555 /* NetworkManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = D519F61E2CC5AC0F00A80555 /* NetworkManaging.swift */; };
+		D519F6212CC5ADA400A80555 /* DataTasking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D519F6202CC5ADA400A80555 /* DataTasking.swift */; };
+		D519F6252CC67F6600A80555 /* ErrorRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D519F6242CC67F6600A80555 /* ErrorRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		851443A62CB9F7920066F955 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		851443A92CB9F7920066F955 /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
 		851443B12CB9F8590066F955 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		851443BF2CBAE3160066F955 /* NetworkHTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHTTPMethod.swift; sourceTree = "<group>"; };
+		851443BF2CBAE3160066F955 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		851443C12CC185100066F955 /* HTTPRequesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequesting.swift; sourceTree = "<group>"; };
-		851443C32CC1854F0066F955 /* NetworkTaskType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTaskType.swift; sourceTree = "<group>"; };
+		D519F61A2CC5AB4700A80555 /* Encodable+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+extension.swift"; sourceTree = "<group>"; };
+		D519F61C2CC5AB7100A80555 /* URLRequest+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+extension.swift"; sourceTree = "<group>"; };
+		D519F61E2CC5AC0F00A80555 /* NetworkManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManaging.swift; sourceTree = "<group>"; };
+		D519F6202CC5ADA400A80555 /* DataTasking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTasking.swift; sourceTree = "<group>"; };
+		D519F6242CC67F6600A80555 /* ErrorRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +61,7 @@
 		851443A82CB9F7920066F955 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				D519F6192CC5AB3E00A80555 /* Extensions */,
 				851443B02CB9F7BF0066F955 /* Network */,
 				851443A92CB9F7920066F955 /* Core.h */,
 			);
@@ -62,12 +71,23 @@
 		851443B02CB9F7BF0066F955 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				D519F6242CC67F6600A80555 /* ErrorRequest.swift */,
+				D519F6202CC5ADA400A80555 /* DataTasking.swift */,
+				D519F61E2CC5AC0F00A80555 /* NetworkManaging.swift */,
 				851443B12CB9F8590066F955 /* NetworkManager.swift */,
-				851443BF2CBAE3160066F955 /* NetworkHTTPMethod.swift */,
+				851443BF2CBAE3160066F955 /* HTTPMethod.swift */,
 				851443C12CC185100066F955 /* HTTPRequesting.swift */,
-				851443C32CC1854F0066F955 /* NetworkTaskType.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		D519F6192CC5AB3E00A80555 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D519F61C2CC5AB7100A80555 /* URLRequest+extension.swift */,
+				D519F61A2CC5AB4700A80555 /* Encodable+extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -109,7 +129,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					851443A52CB9F7920066F955 = {
 						CreatedOnToolsVersion = 15.0.1;
@@ -150,10 +170,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D519F6252CC67F6600A80555 /* ErrorRequest.swift in Sources */,
+				D519F61D2CC5AB7100A80555 /* URLRequest+extension.swift in Sources */,
+				D519F6212CC5ADA400A80555 /* DataTasking.swift in Sources */,
 				851443C22CC185100066F955 /* HTTPRequesting.swift in Sources */,
+				D519F61B2CC5AB5800A80555 /* Encodable+extension.swift in Sources */,
 				851443B22CB9F8590066F955 /* NetworkManager.swift in Sources */,
-				851443C02CBAE3160066F955 /* NetworkHTTPMethod.swift in Sources */,
-				851443C42CC1854F0066F955 /* NetworkTaskType.swift in Sources */,
+				D519F61F2CC5AC0F00A80555 /* NetworkManaging.swift in Sources */,
+				851443C02CBAE3160066F955 /* HTTPMethod.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +313,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -313,7 +338,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -322,6 +347,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -345,7 +371,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

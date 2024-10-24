@@ -6,7 +6,9 @@
 //
 
 import Foundation
+import Core
 
+@MainActor
 protocol ProductViewModelDelegate: AnyObject {
     func reloadData()
     func showError(error: ErrorRequest)
@@ -17,15 +19,16 @@ final class ProductViewModel {
     private let service = ProductService()
     weak var delegate: ProductViewModelDelegate?
     
+    @MainActor
     func getProduct() {
-        service.getProduct { [weak self] result in
+        Task { [weak self] in
             guard let self else { return }
-            switch result {
-            case .success(let success):
-                self.product = success
-                self.delegate?.reloadData()
-            case .failure(let failure):
-                self.delegate?.showError(error: failure)
+            do {
+                product = try await service.getProduct()
+                delegate?.reloadData()
+            } catch {
+                let errorRequest = ErrorRequest(message: error.localizedDescription)
+                delegate?.showError(error: errorRequest)
             }
         }
     }

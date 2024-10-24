@@ -8,17 +8,11 @@
 import Foundation
 
 public protocol HTTPRequesting {
-
-    var baseURL: URLComponents { get }
-
     var endpoint: String { get }
-
-    var method: NetworkHTTPMethod { get }
-
-    var headers: [String: String]? { get set }
-
-    var queryItems: [URLQueryItem]? { get }
-    
+    var queryItems: [URLQueryItem]? { get set }
+    var method: HTTPMethod { get }
+    var body: Encodable? { get }
+    var header: [String: String?]? { get }
 }
 
 extension HTTPRequesting {
@@ -32,38 +26,68 @@ extension HTTPRequesting {
     }
     
     public var headers: [String: String]? {
-        var headers: [String: String]? = ["Content-Type": "application/json"]
+        let headers: [String: String]? = ["Content-Type": "application/json"]
         return headers
     }
     
 }
 
-public class HTTPRequest: HTTPRequesting {
-    public var headers: [String : String]?
+public class HTTPRequestBuilder: HTTPRequesting {
+    public var queryItems: [URLQueryItem]?
     public var endpoint: String
-    public var method: NetworkHTTPMethod
+    public var method: HTTPMethod
+    public var body: (any Encodable)?
+    public var header: [String : String?]?
     
-    init(endpoint: String, method: NetworkHTTPMethod) {
+    
+    public init(endpoint: String, method: HTTPMethod) {
         self.endpoint = endpoint
         self.method = method
     }
     
-    public func withHeader(key: String, value: String) -> HTTPRequesting {
-        if var header = headers {
-            header[key] = value
-            self.headers = header
-        } else {
-            headers = [key: value]
-        }
+    public func withQueryItem(queryItems: [URLQueryItem]) -> HTTPRequestBuilder {
+        self.queryItems = queryItems
         return self
     }
     
+    public func withBody(body: Encodable) -> HTTPRequestBuilder {
+        self.body = body
+        return self
+    }
     
+    public func withHeader(key: String, value: String) -> HTTPRequestBuilder {
+        if var header = header {
+            header[key] = value
+            self.header = header
+        } else {
+            header = [key: value]
+        }
+        
+        return self
+    }
+    
+    public func build() -> HTTPRequest {
+        return HTTPRequest(
+            endpoint: endpoint,
+            header: header,
+            baseURL: baseURL,
+            queryItems: queryItems,
+            method: method,
+            body: body
+        )
+    }
+}
+
+public struct HTTPRequest: HTTPRequesting {
+    public var endpoint: String
+    public var header: [String : String?]?
+    public var baseURL: URLComponents
+    public var queryItems: [URLQueryItem]?
+    public var method: HTTPMethod
+    public var body: (any Encodable)?
 }
 
 
-
-
 public class URLManager {
-    static var baseUrl: URLComponents = URLComponents(string: "")!
+    static let baseUrl: URLComponents = URLComponents(string: "")!
 }

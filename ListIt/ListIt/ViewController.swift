@@ -7,6 +7,7 @@
 
 import SwiftUI
 import DesignSystem
+import Core
 
 class TabBarController: UITabBarController {
     init() {
