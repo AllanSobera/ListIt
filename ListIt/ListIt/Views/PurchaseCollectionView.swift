@@ -2,7 +2,7 @@
 //  PurchaseCollectionView.swift
 //  SupermarketList
 //
-//  Created by Premiersoft on 06/10/24.
+//  Created by Allan Soberanski on 06/10/24.
 //
 
 import UIKit

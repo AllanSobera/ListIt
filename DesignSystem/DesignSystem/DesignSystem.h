@@ -2,7 +2,7 @@
 //  DesignSystem.h
 //  DesignSystem
 //
-//  Created by Premiersoft on 11/10/24.
+//  Created by Allan Soberanski on 11/10/24.
 //
 
 #import <Foundation/Foundation.h>

@@ -2,7 +2,7 @@
 //  SupermarketListUITests.swift
 //  SupermarketListUITests
 //
-//  Created by Premiersoft on 28/09/24.
+//  Created by Allan Soberanski on 28/09/24.
 //
 
 import XCTest
