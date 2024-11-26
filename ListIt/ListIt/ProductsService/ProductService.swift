@@ -8,27 +8,37 @@
 import Foundation
 import Core
 
-final class ProductService {
+protocol ProductServiceProtocol {
+    func getProduct() async throws -> [ProductDTO]
+}
+
+final class ProductService: ProductServiceProtocol {
     
     private let networkManager: NetworkManaging
     
-    init(networkManager: NetworkManaging = SpyNetworkManager()) {
-        self.networkManager = networkManager
+    init(networkManager: NetworkManaging = NetworkManager.init()) {
+        self.networkManager = BuildInformation.shared.isMock ? SpyNetworkManager() : networkManager
     }
     
-    
-    func getProduct() async throws -> [Product] {
-        let request = HTTPRequestBuilder(endpoint: ProductEndPoints.allProducts, method: .get)
-        return try await networkManager.execute(request: request, resultType: [Product].self, withJSONResponse: true)
+    func getProduct() async throws -> [ProductDTO] {
+        let request = HTTPRequestBuilder(
+            endpoint: ProductEndPoints.allProducts,
+            method: .get
+        )
+        return try await networkManager.execute(
+            request: request,
+            resultType: [ProductDTO].self,
+            withJSONResponse: true
+        )
     }
 }
 
-private struct ProductEndPoints {
+fileprivate struct ProductEndPoints {
     static let allProducts = "/products"
 }
 
 fileprivate class SpyNetworkManager: NetworkManaging {
-    func execute<T>(
+    fileprivate func execute<T>(
         request: any Core.HTTPRequesting,
         resultType: T.Type,
         withJSONResponse: Bool
@@ -179,14 +189,19 @@ fileprivate class SpyNetworkManager: NetworkManaging {
         
         do {
             try await Task.sleep(for: .seconds(2))
-            var products: [Product] = []
-
+            var products: [ProductDTO] = []
+            
             for item in data {
                 if let id = item["id"] as? Int,
                    let name = item["name"] as? String,
                    let image = item["image"] as? String,
                    let category = item["category"] as? String {
-                    let product = Product(id: id, name: name, image: image, category: category)
+                    let product = ProductDTO(
+                        id: id,
+                        name: name,
+                        image: image,
+                        category: category
+                    )
                     products.append(product)
                 }
             }
@@ -198,9 +213,3 @@ fileprivate class SpyNetworkManager: NetworkManaging {
 }
 
 
-struct Product: Codable {
-    let id: Int
-    let name: String
-    let image: String
-    let category: String
-}

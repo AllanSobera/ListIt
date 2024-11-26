@@ -18,6 +18,8 @@
 		85D8D5382CB99F8C002396E1 /* DesignSystem.docc in Sources */ = {isa = PBXBuildFile; fileRef = 85D8D5372CB99F8C002396E1 /* DesignSystem.docc */; };
 		85D8D53E2CB99F8C002396E1 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D8D5332CB99F8C002396E1 /* DesignSystem.framework */; };
 		85D8D5442CB99F8C002396E1 /* DesignSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 85D8D5362CB99F8C002396E1 /* DesignSystem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5190B6E2CCB142C00F8C1C1 /* ASBannerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5190B6D2CCB140400F8C1C1 /* ASBannerCollectionView.swift */; };
+		D59371662CCB194000D68B31 /* ASCarrouselCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59371652CCB193400D68B31 /* ASCarrouselCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		85D8D5362CB99F8C002396E1 /* DesignSystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DesignSystem.h; sourceTree = "<group>"; };
 		85D8D5372CB99F8C002396E1 /* DesignSystem.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = DesignSystem.docc; sourceTree = "<group>"; };
 		85D8D53D2CB99F8C002396E1 /* DesignSystemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesignSystemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5190B6D2CCB140400F8C1C1 /* ASBannerCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASBannerCollectionView.swift; sourceTree = "<group>"; };
+		D59371652CCB193400D68B31 /* ASCarrouselCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASCarrouselCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,12 +164,38 @@
 		85D8D5352CB99F8C002396E1 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				D593716D2CCB1AB600D68B31 /* Buttons */,
+				D59371642CCB18D400D68B31 /* CollectionViews */,
+				D5190B6C2CCB139E00F8C1C1 /* Cells */,
 				85D8D5362CB99F8C002396E1 /* DesignSystem.h */,
 				85D8D5372CB99F8C002396E1 /* DesignSystem.docc */,
-				851443622CB9F1E40066F955 /* ASButton.swift */,
 				851443752CB9F4180066F955 /* Assets.xcassets */,
 			);
 			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		D5190B6C2CCB139E00F8C1C1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D5190B6D2CCB140400F8C1C1 /* ASBannerCollectionView.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D59371642CCB18D400D68B31 /* CollectionViews */ = {
+			isa = PBXGroup;
+			children = (
+				D59371652CCB193400D68B31 /* ASCarrouselCollectionView.swift */,
+			);
+			path = CollectionViews;
+			sourceTree = "<group>";
+		};
+		D593716D2CCB1AB600D68B31 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				851443622CB9F1E40066F955 /* ASButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,6 +423,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				85D8D5382CB99F8C002396E1 /* DesignSystem.docc in Sources */,
+				D59371662CCB194000D68B31 /* ASCarrouselCollectionView.swift in Sources */,
+				D5190B6E2CCB142C00F8C1C1 /* ASBannerCollectionView.swift in Sources */,
 				851443632CB9F1E40066F955 /* ASButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

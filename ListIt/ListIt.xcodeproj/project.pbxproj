@@ -25,6 +25,10 @@
 		85FC1CE42CB3324A002B57FF /* PurchaseCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FC1CE32CB3324A002B57FF /* PurchaseCollectionView.swift */; };
 		85FC1CE72CB339A5002B57FF /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FC1CE62CB339A5002B57FF /* ProductService.swift */; };
 		85FC1CEA2CB34334002B57FF /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FC1CE92CB34334002B57FF /* ProductViewModel.swift */; };
+		D5190B6B2CCB0FEA00F8C1C1 /* ProductDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5190B6A2CCB0FEA00F8C1C1 /* ProductDTO.swift */; };
+		D59371C42CD0788F00D68B31 /* Auth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D59371C32CD0788F00D68B31 /* Auth.framework */; };
+		D59371C52CD0788F00D68B31 /* Auth.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D59371C32CD0788F00D68B31 /* Auth.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D5A9532B2CD10871000F1E47 /* Auth.framework in Sources */ = {isa = PBXBuildFile; fileRef = D59371C32CD0788F00D68B31 /* Auth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +56,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				85D8D54F2CB9A2AC002396E1 /* DesignSystem.framework in Embed Frameworks */,
+				D59371C52CD0788F00D68B31 /* Auth.framework in Embed Frameworks */,
 				851443BA2CB9F9140066F955 /* Core.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -78,6 +83,9 @@
 		85FC1CE32CB3324A002B57FF /* PurchaseCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseCollectionView.swift; sourceTree = "<group>"; };
 		85FC1CE62CB339A5002B57FF /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
 		85FC1CE92CB34334002B57FF /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
+		D5190B6A2CCB0FEA00F8C1C1 /* ProductDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDTO.swift; sourceTree = "<group>"; };
+		D593716E2CD02E3300D68B31 /* ListIt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ListIt.entitlements; sourceTree = "<group>"; };
+		D59371C32CD0788F00D68B31 /* Auth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Auth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +94,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85D8D54E2CB9A2AC002396E1 /* DesignSystem.framework in Frameworks */,
+				D59371C42CD0788F00D68B31 /* Auth.framework in Frameworks */,
 				851443B92CB9F9140066F955 /* Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -131,6 +140,8 @@
 		857A12CA2CA859850054375D /* ListIt */ = {
 			isa = PBXGroup;
 			children = (
+				D593716E2CD02E3300D68B31 /* ListIt.entitlements */,
+				D5190B692CCB0FDF00F8C1C1 /* Model */,
 				85FC1CE82CB340B9002B57FF /* ViewModel */,
 				85FC1CE52CB33978002B57FF /* ProductsService */,
 				85FC1CDE2CB331CA002B57FF /* Views */,
@@ -171,6 +182,7 @@
 		85D8D4F92CB99DA4002396E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D59371C32CD0788F00D68B31 /* Auth.framework */,
 				851443B82CB9F9140066F955 /* Core.framework */,
 				85D8D54D2CB9A2AC002396E1 /* DesignSystem.framework */,
 			);
@@ -201,6 +213,14 @@
 				85FC1CE92CB34334002B57FF /* ProductViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D5190B692CCB0FDF00F8C1C1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D5190B6A2CCB0FEA00F8C1C1 /* ProductDTO.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,6 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5A9532B2CD10871000F1E47 /* Auth.framework in Sources */,
 				851443BB2CB9F91C0066F955 /* Core.framework in Sources */,
 				85D8D5502CB9F04E002396E1 /* DesignSystem.framework in Sources */,
 				85FC1CEA2CB34334002B57FF /* ProductViewModel.swift in Sources */,
@@ -341,6 +362,7 @@
 				85FC1CE42CB3324A002B57FF /* PurchaseCollectionView.swift in Sources */,
 				85FC1CE22CB33217002B57FF /* HomeBannerTableViewCell.swift in Sources */,
 				85FC1CE02CB331E0002B57FF /* PurchaseCollectionViewCell.swift in Sources */,
+				D5190B6B2CCB0FEA00F8C1C1 /* ProductDTO.swift in Sources */,
 				857A12CC2CA859850054375D /* AppDelegate.swift in Sources */,
 				85FC1CE72CB339A5002B57FF /* ProductService.swift in Sources */,
 			);
@@ -503,6 +525,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ListIt/ListIt.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ListIt/Preview Content\"";
@@ -532,6 +555,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ListIt/ListIt.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ListIt/Preview Content\"";

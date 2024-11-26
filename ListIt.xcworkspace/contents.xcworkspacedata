@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Auth/Auth.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:ListIt/ListIt.xcodeproj">
    </FileRef>
    <FileRef

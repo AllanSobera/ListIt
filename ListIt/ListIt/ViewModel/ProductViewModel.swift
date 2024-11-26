@@ -15,8 +15,8 @@ protocol ProductViewModelDelegate: AnyObject {
 }
 
 final class ProductViewModel {
-    var product: [Product] = []
-    private let service = ProductService()
+    var product: [ProductDTO] = []
+    private let service = ProductService(networkManager: NetworkManager.init())
     weak var delegate: ProductViewModelDelegate?
     
     @MainActor

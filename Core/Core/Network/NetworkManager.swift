@@ -16,7 +16,11 @@ public final class NetworkManager: NetworkManaging {
         self.dataTasking = dataTasking
     }
     
-    public func execute<T>(request: any HTTPRequesting, resultType: T.Type, withJSONResponse: Bool) async throws -> T where T : Decodable, T : Encodable {
+    public func execute<T>(
+        request: any HTTPRequesting,
+        resultType: T.Type,
+        withJSONResponse: Bool
+    ) async throws -> T where T : Decodable, T : Encodable {
         do {
             let request = URLRequest.from(httpRequest: request)
             let (data, response) = try await dataTasking.data(for: request)

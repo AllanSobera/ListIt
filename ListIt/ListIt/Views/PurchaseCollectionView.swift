@@ -26,7 +26,7 @@ final class PurchaseCollectionView: UITableViewCell {
         return collectionView
     }()
     
-    private var products = [Product]()
+    private var products = [ProductDTO]()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -39,7 +39,7 @@ final class PurchaseCollectionView: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup(data: [Product]) {
+    func setup(data: [ProductDTO]) {
         self.products = data
         collectionView.reloadData()
     }

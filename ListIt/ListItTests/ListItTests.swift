@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import SupermarketList
+@testable import ListIt
 
 final class SupermarketListTests: XCTestCase {
 

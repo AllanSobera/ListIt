@@ -139,7 +139,7 @@ final class HomeView: UIView {
         return tableView
     }()
     
-    private var products = [Product]()
+    private var products = [ProductDTO]()
     
     init() {
         super.init(frame: .zero)
@@ -150,7 +150,7 @@ final class HomeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func reloadData(data: [Product]) {
+    func reloadData(data: [ProductDTO]) {
         self.products = data
         tableView.reloadData()
     }
